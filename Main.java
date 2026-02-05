@@ -10,14 +10,14 @@
  */
  public class Main {
 	/**
-	 * Calcula la suma dels nombres primers del 1 al 100.
-	 * 
-	 * @return suma dels nombres primers del 1 al 100.
+	 * Calcula la suma dels nombres primers des del 1 fins a x. (Exclueix el número 1)
+	 * @param x nombre en el que deixa de comptar.
+	 * @return suma dels nombres primers.
 	 */
-	public int primeSum(){
+	public int primeSum(int x){
 		int sum = 0;
 		boolean isPrime;
-		for (int i = 2; i <= 100; i++){
+		for (int i = 2; i <= x; i++){
 			isPrime = true;
 			for(int f = 2; f < i; f++){
 				if(i%f == 0){
@@ -25,7 +25,7 @@
 				}
 			}
 			if (isPrime){
-				System.out.println(i);
+				//System.out.println(i);
 				sum += i;
 			}
 		}
@@ -40,7 +40,10 @@
 		Main p = new Main();		
 		System.out.println("SUMA NOMBRES PRIMERS 1-100\n");
 		
-		System.out.println("TOTAL:"+p.primeSum());
+		System.out.println("TOTAL:"+p.primeSum(100));
+		
+		System.out.println("******************************\nSUMA NOMBRES PRIMERS 1-5\n");
+		System.out.println("TOTAL:"+p.primeSum(5));
 		
 		
 		
